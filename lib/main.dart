@@ -25,6 +25,8 @@ class TodoHomeScreen extends StatefulWidget {
 }
 
 class _TodoHomeScreenState extends State<TodoHomeScreen> {
+
+  var myList = [];
   
   final _textController = TextEditingController();
   
@@ -48,7 +50,14 @@ class _TodoHomeScreenState extends State<TodoHomeScreen> {
               ),
             ),
             ElevatedButton(
-              onPressed:(){},
+              onPressed:(){
+                 print("button pressed text: ${_textController.text}");
+                setState(() {
+                  myList.add( _textController.text);
+
+                });
+               
+              },
               child: Text("+Add")
             )
           ],)
